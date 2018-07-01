@@ -8,6 +8,7 @@ import com.kyanro.dagger2sample.data.repo.StringRepo
 import dagger.Module
 import dagger.Provides
 import dagger.android.ContributesAndroidInjector
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -18,11 +19,11 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideNameRepo(name: String): NameRepo = NameRepo(name)
+    fun provideNameRepo(@Named("name") name: String): NameRepo = NameRepo(name)
 
     @Provides
     @Singleton
-    fun provideStringRepo(name: String): StringRepo = StringRepo(name)
+    fun provideStringRepo(@Named("string") str: String): StringRepo = StringRepo(str)
 }
 
 @Module

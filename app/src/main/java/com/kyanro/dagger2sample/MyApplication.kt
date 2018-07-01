@@ -18,6 +18,7 @@ class MyApplication : Application(), HasActivityInjector {
         super.onCreate()
         DaggerAppComponent.builder()
                 .name("repo name")
+                .string("string name")
                 .create(this)
                 .inject(this)
     }
